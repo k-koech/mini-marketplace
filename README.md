@@ -23,7 +23,7 @@
    
     
 ## Live link
-Deployed Frontend can be accessed here [react](subtle-frangollo-5233f5.netlify.app/auth)   
+Deployed Frontend can be accessed here [react](https://subtle-frangollo-5233f5.netlify.app/auth)   
 Deployed Backend can be accessed here [Sinatra](https://railsproject34.herokuapp.com/)
 Note: Backend might not work at the time you are viewing this because the free version of heroku is being wiped out
 
