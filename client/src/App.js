@@ -34,7 +34,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout user={user} setUser={setUser} />}>
           <Route index element={<Home user={user} />} />
-          <Route path="products/:id" element={<EditProduct />} />
+          <Route path="products/:id" element={<EditProduct user={user} />} />
 
           <Route path="/auth" element={<Auth onLogin={setUser}/>} />
          

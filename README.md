@@ -28,7 +28,8 @@ Deployed Backend can be accessed here [Sinatra](https://railsproject34.herokuapp
 Note: Backend might not work at the time you are viewing this because the free version of heroku is being wiped out
 
 ## Known Bugs
-    The application works perfectly well, no bugs.
+    The application images dissapears in heroku
+    Otherwise application works perfectly well, no bugs.
 
 ## Technologies used
     - React 

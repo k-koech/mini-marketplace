@@ -11,16 +11,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # def login
-  #   user = User.find_by(username: params[:username])
-  #   if user&.authenticate(params[:password])
-  #     session[:user_id] = user.id
-  #     render json: user
-  #   else
-  #     render json: { errors: ["Invalid username or password"] }, status: :unauthorized
-  #   end
-  # end
-
   def show
     render json: @current_user
   end
@@ -37,21 +27,13 @@ class UsersController < ApplicationController
         logged_in: false
       }
     end
-    # if @current_user
-    #   render json: {
-    #     logged_in: true,
-    #     user: @current_user
-    #   }
-    # else
-    #   render json: { logged_in: false }
-    # end
   end
 
   
 
   private
   def user_params
-    params.permit(:username, :password, :image_url, :phone)
+    params.permit(:username, :password, :phone)
   end
 
 end

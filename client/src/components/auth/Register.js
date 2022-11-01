@@ -7,14 +7,14 @@ function Register() {
   const navigate = useNavigate();
 
   const [username, setUsername] = useState("");
+  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
-  const [bio, setBio] = useState("");
   const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleRegister = (e)=> {
+  const handleRegister = (e)=> 
+  {
     e.preventDefault();
     setErrors([]);
     setIsLoading(true);
@@ -24,7 +24,7 @@ function Register() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({username,password, image_url: imageUrl, bio,}),
+      body: JSON.stringify({username,password, phone}),
     },{withCredentials: true})
     .then((r) => {
       setIsLoading(false);
@@ -33,11 +33,10 @@ function Register() {
         r.json().then((user) => {
           if(user.errors){
             setErrors(user.errors)
-            console.log("success", user)
           }
           else{
             console.log("success", user)
-
+            toast("User saved successfully!!")
           }
         });
 
@@ -65,6 +64,14 @@ function Register() {
             value={username} onChange={(e) => setUsername(e.target.value)}
           />
         </div>
+
+        <div className="form-group">
+          <label>Phone</label>
+          <input className="form-control" type="text" autoComplete="off"
+            value={phone} onChange={(e) => setPhone(e.target.value)}
+          />
+        </div>
+
         <div className="form-group">
           <label>Password</label>
           <input className="form-control" type="password"
@@ -74,28 +81,20 @@ function Register() {
         </div>
         <div className="form-group">
           <label>Password Confirmation</label>
-          <input className="form-control" type="password"
+          <input className="form-control" type="password" 
             value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)}
             autoComplete="none"
           />
+          {passwordConfirmation!=password?
+          <small class="form-text text-danger">Password doesn't match!</small>:""
+          }
+
         </div>
 
         <div className="form-group">
-          <label>Profile Image</label>
-          <input className="form-control" type="text"
-            autoComplete="none" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)}
-          />
-        </div>
-
-        <div className="form-group">
-          <label>Bio</label>
-          <textarea className="form-control" type="text" rows="3"
-            autoComplete="none" value={bio} onChange={(e) => setBio(e.target.value)}
-          />
-        </div>
-      
-        <div className="form-group">
-          <div className="text-right"><button className="btn btn-outline-success px-5" type="submit">{isLoading ? "Loading..." : "Sign Up"}</button></div>
+          <div className="text-right">
+            <button disabled={passwordConfirmation!=password} className="btn btn-outline-success px-5" type="submit">{isLoading ? "Loading..." : "Sign Up"}</button>
+          </div>
         </div> 
       </form>
 

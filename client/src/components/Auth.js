@@ -18,16 +18,17 @@ function Auth({ onLogin })
             <div>
             <div className="text-center">
                 <button className="btn btn-outline-dark" onClick={ () => setToggle(!toggle) }>
-                 {toggle?"Login":"Register"}
+                 {toggle?"Register":"Login"}
                 </button>
             </div>
            
             <hr/>
             {
                 toggle ?
-                <Register onLogin={onLogin} />
-                :
                 <Login onLogin={onLogin} />
+                :
+                <Register onLogin={onLogin} />
+               
             }
             </div>        
         </div>

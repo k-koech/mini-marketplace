@@ -40,8 +40,11 @@ function Login({ onLogin }) {
           {
             console.log("success", response.user)
             onLogin(response.user)
-            navigate(`/`)
-            toast("Logged in successfully")
+            toast.success("Logged in successfully")
+            setTimeout(() => { 
+              navigate(`/`)
+            }, 3000)
+            
           }
         });
       } 
@@ -78,6 +81,8 @@ function Login({ onLogin }) {
           <div className="text-right"><button className="btn btn-outline-success px-5" type="submit">{isLoading ? "Loading..." : "Login"}</button></div>
         </div> 
       </form>
+
+      <ToastContainer/>
     </div>    
    </>
   );

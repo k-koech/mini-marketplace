@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
-    
+    skip_before_action :authorize, only: [:index, :show]
+
     def index
-        render json: @current_user.products.all
+        render json: Product.all.includes(:user)
     end
 
     def create
@@ -50,7 +51,7 @@ class ProductsController < ApplicationController
 
     private
     def find_product
-        @current_user.products.exists?(id: params[:id])
+        Product.exists?(id: params[:id])
     end
 
     def product_params

@@ -2,8 +2,7 @@ import { Outlet, Link } from "react-router-dom";
 import {MdBusinessCenter} from "react-icons/md"
 import Footer from "./Footer";
 import { useEffect } from "react";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 const Layout = ({user, setUser}) => 
 {
@@ -80,7 +79,6 @@ const Layout = ({user, setUser}) =>
      
      <div className="container main-container">
             <Outlet />
-            <ToastContainer/>
      </div>
 
      <Footer/>

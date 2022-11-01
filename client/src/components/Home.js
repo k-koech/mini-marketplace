@@ -53,7 +53,7 @@ const Home = ({user}) => {
         </div>
         <h6>{product.name}</h6>
         <h6><CiLocationOn/> {product.location}</h6>
-        <button className="btn btn-primary" onClick={()=>navigate(`/products/${product.id}`)} >
+        <button className="btn btn-outline-primary" onClick={()=>navigate(`/products/${product.id}`)} >
           View Product
         </button>
       </div>
