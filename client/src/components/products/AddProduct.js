@@ -20,7 +20,7 @@ const AddProduct = ({user}) => {
         setErrors([]);
         setIsLoading(true);
     
-        fetch("/products", {
+        fetch("https://railsproject34.herokuapp.com/products", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

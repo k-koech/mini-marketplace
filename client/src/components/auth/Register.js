@@ -19,7 +19,7 @@ function Register() {
     setErrors([]);
     setIsLoading(true);
 
-    fetch("http://127.0.0.1:3000/signup", {
+    fetch("/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ function Register() {
           }
           else{
             console.log("success", user)
-            toast("User saved successfully!!")
+            toast.success("User saved successfully!!")
           }
         });
 
@@ -97,6 +97,7 @@ function Register() {
           </div>
         </div> 
       </form>
+      <ToastContainer/>
 
    </>
   );

@@ -48,20 +48,20 @@ const Layout = ({user, setUser}) =>
       
       <ul className="nav nav-pills">
         <li className="nav-item">
-          <Link className="nav-link" to="/">Home</Link>
+          <Link className="nav-link text-dark" to="/">Home</Link>
         </li>
         {
           user?
           <>
          <li className="nav-item dropdown">
-          <Link className="nav-link dropdown-toggle" data-toggle="dropdown" to="#" role="button" aria-expanded="false">
+          <Link className="nav-link dropdown-toggle text-dark" data-toggle="dropdown" to="#" role="button" aria-expanded="false">
             {user.username}
           </Link>
           <div className="dropdown-menu">
             <Link className="dropdown-item" to="#one"></Link>
             <Link className="dropdown-item" to="#two">Profile</Link>
             <div role="separator" className="dropdown-divider"></div>
-            <Link className="dropdown-item" to="#three">
+            <Link className="dropdown-item">
             <button className="nav-link" onClick={handleLogoutClick} >Logout</button>
             </Link>
           </div>
@@ -70,7 +70,7 @@ const Layout = ({user, setUser}) =>
          
          :
          <li className="nav-item">
-            <Link className="nav-link" to="/auth">Login/Register</Link>
+            <Link className="nav-link text-dark" to="/auth">Login/Register</Link>
          </li>
         }
         
