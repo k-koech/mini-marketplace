@@ -21,7 +21,7 @@ function Login({ onLogin }) {
     setErrors([]);
     setIsLoading(true);
 
-    fetch("/login", {
+    fetch("/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

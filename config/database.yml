@@ -14,13 +14,13 @@ development:
 
 production:
   adapter: postgresql            
-  host: ec2-54-160-200-167.compute-1.amazonaws.com                          # VM IP
+  host: ec2-44-209-57-4.compute-1.amazonaws.com                         # VM IP
   port: 5432                          # VM Port 
-  database: dfihcln7cnqk1g             # Database Name
-  username: dxeqplaoxysnqt                 # User Name
-  password: c067093ae9963ccf7a03d2cb9abc0e7f8970a74e048054674063c66a9e65c699   
+  database: dc8knhlb9rehi7             # Database Name
+  username: ellmddlywtyeny                 # User Name
+  password: ad4d6fe8ed707585f26a9d7a22cfbcf3257894bcefb55cf082e9c54f86c7322f   
 
-
+# postgres://ellmddlywtyeny:ad4d6fe8ed707585f26a9d7a22cfbcf3257894bcefb55cf082e9c54f86c7322f@ec2-44-209-57-4.compute-1.amazonaws.com:5432/dc8knhlb9rehi7
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.

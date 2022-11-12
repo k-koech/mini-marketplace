@@ -9,7 +9,7 @@ const Home = ({user}) => {
    const [products, setProducts] = useState([])
    
    useEffect(()=>{
-    fetch("/products")
+    fetch("/api/products")
     .then((response)=> response.json() )
     .then((products)=>{
        setProducts(products)

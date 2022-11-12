@@ -8,7 +8,7 @@ const Layout = ({user, setUser}) =>
 {
 
   useEffect(()=>{
-    fetch("/loggedin")
+    fetch("/api/loggedin")
     .then((res)=>{
 			if(res.ok){
 				res.json().then((data)=> {
@@ -23,7 +23,7 @@ const Layout = ({user, setUser}) =>
   console.log("Logged in? ", user)
   
    function handleLogoutClick() {
-    fetch("/logout", {
+    fetch("/api/logout", {
       method: "DELETE", 
     })  
     .then(response => {

@@ -31,7 +31,7 @@ const EditProduct = ({user}) =>
         setErrors([]);
         setIsLoading(true);
 
-        fetch(`/products/${productId}`, {
+        fetch(`/api/products/${productId}`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",
@@ -61,7 +61,7 @@ const EditProduct = ({user}) =>
   // end of edit
   useEffect(()=>
   {
-    fetch(`/products/${parameters.id}`)
+    fetch(`/api/products/${parameters.id}`)
     .then((response)=> response.json() )
     .then((product)=>{
        setProduct(product)
